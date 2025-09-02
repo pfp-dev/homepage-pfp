@@ -30,12 +30,13 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files (Web3Formsを使用しているため不要)
+# .env*
 
-# vercel
-.vercel
+# vercel (Web3Formsを使用しているため不要)
+# .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.vercel

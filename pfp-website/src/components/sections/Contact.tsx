@@ -17,68 +17,45 @@ import {
 import GoogleMap from "@/components/GoogleMap";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: ""
-  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     setIsSubmitting(true);
-    
-    // Vercel Formsを使用したフォーム送信
-    // Vercel Formsのエンドポイントに送信
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          to: "contact@pfp.co.jp"
-        }),
-      });
-      
-      if (!response.ok) {
-        throw new Error("送信に失敗しました");
-      }
-      
-      // 成功時の処理
-      console.log("送信成功");
-    } catch (error) {
-      console.error("送信エラー:", error);
-      // エラー処理（必要に応じて）
-    }
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // フォームリセット
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: "",
-        company: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: ""
-      });
-    }, 3000);
-  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
+    try {
+      const formData = new FormData(e.target as HTMLFormElement);
+      
+      // Web3Formsに送信
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        // 成功時は完了表示
+        setIsSubmitted(true);
+        
+        // 3秒後に完了表示を消す
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 3000);
+        
+        // フォームをリセット
+        (e.target as HTMLFormElement).reset();
+      } else {
+        // エラー時の処理
+        console.error('送信エラー:', response.statusText);
+        alert('送信に失敗しました。もう一度お試しください。');
+      }
+    } catch (error) {
+      console.error('送信エラー:', error);
+      alert('送信に失敗しました。もう一度お試しください。');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -165,7 +142,32 @@ export default function Contact() {
                     </p>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="space-y-6"
+                    name="contact"
+                  >
+                    {/* Web3Formsアクセスキー（隠しフィールド） */}
+                    <input 
+                      type="hidden" 
+                      name="access_key" 
+                      value="8ee8c8c8-d532-4dcc-980f-06881c075c10" 
+                    />
+                    
+                    {/* スパム対策用の隠しフィールド */}
+                    <input 
+                      type="hidden" 
+                      name="subject" 
+                      value="お問い合わせフォームからの送信" 
+                    />
+                    
+                    {/* 送信先メールアドレス */}
+                    <input 
+                      type="hidden" 
+                      name="from_name" 
+                      value="PFPお問い合わせフォーム" 
+                    />
+
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -176,8 +178,6 @@ export default function Contact() {
                           name="name"
                           type="text"
                           required
-                          value={formData.name}
-                          onChange={handleChange}
                           placeholder="山田 太郎"
                         />
                       </div>
@@ -189,8 +189,6 @@ export default function Contact() {
                           id="company"
                           name="company"
                           type="text"
-                          value={formData.company}
-                          onChange={handleChange}
                           placeholder="株式会社サンプル"
                         />
                       </div>
@@ -206,8 +204,6 @@ export default function Contact() {
                           name="email"
                           type="email"
                           required
-                          value={formData.email}
-                          onChange={handleChange}
                           placeholder="example@company.com"
                         />
                       </div>
@@ -219,8 +215,6 @@ export default function Contact() {
                           id="phone"
                           name="phone"
                           type="tel"
-                          value={formData.phone}
-                          onChange={handleChange}
                           placeholder="03-1234-5678"
                         />
                       </div>
@@ -235,8 +229,6 @@ export default function Contact() {
                         name="subject"
                         type="text"
                         required
-                        value={formData.subject}
-                        onChange={handleChange}
                         placeholder="お問い合わせ内容の件名"
                       />
                     </div>
@@ -250,8 +242,6 @@ export default function Contact() {
                         name="message"
                         required
                         rows={6}
-                        value={formData.message}
-                        onChange={handleChange}
                         placeholder="お問い合わせ内容をご記入ください..."
                       />
                     </div>
