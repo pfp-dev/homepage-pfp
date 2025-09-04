@@ -3,7 +3,6 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // パフォーマンス最適化
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
   
