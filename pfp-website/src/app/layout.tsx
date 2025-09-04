@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "ITコンサルティング",
     "株式会社PFP",
     "東京",
-    "台東区"
+    "世田谷区"
   ],
   authors: [{ name: "株式会社PFP" }],
   creator: "株式会社PFP",
@@ -87,8 +87,68 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "株式会社PFP",
+    "url": "https://pfp.co.jp",
+    "logo": "https://pfp.co.jp/logo.png",
+    "description": "株式会社PFPは、最新の技術と豊富な経験を活かし、システム開発、データベース設計、モバイルアプリ開発、クラウドインフラ構築などの包括的なITソリューションを提供しています。",
+    "address": {
+      "@type": "PostalAddress",
+      "postalCode": "154-0023",
+      "addressRegion": "東京都",
+      "addressLocality": "世田谷区",
+      "streetAddress": "若林4-13-2"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+81-3-5848-2995",
+      "contactType": "customer service",
+      "availableLanguage": "Japanese",
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    },
+    "email": "contact@pfp.co.jp",
+    "foundingDate": "2006",
+    "sameAs": [
+      "https://pfp.co.jp"
+    ]
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "株式会社PFP",
+    "url": "https://pfp.co.jp",
+    "description": "株式会社PFPは、最新の技術と豊富な経験を活かし、システム開発、データベース設計、モバイルアプリ開発、クラウドインフラ構築などの包括的なITソリューションを提供しています。",
+    "publisher": {
+      "@type": "Organization",
+      "name": "株式会社PFP"
+    },
+    "inLanguage": "ja-JP"
+  };
+
   return (
     <html lang="ja" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+      </head>
       <body className={`${inter.variable} ${notoSansJP.variable} font-sans antialiased`}>
         {children}
       </body>
