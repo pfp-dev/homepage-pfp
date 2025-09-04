@@ -4,18 +4,16 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
 import { COMPANY_INFO } from "@/lib/constants";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
-      {/* 背景のパララックス効果 */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
-      
+    <AuroraBackground className="min-h-screen">
       {/* メインコンテンツ */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 drop-shadow-lg"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -28,7 +26,7 @@ export default function Hero() {
           </motion.h2>
 
           <motion.p
-            className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto drop-shadow-md"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -87,11 +85,6 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
-
-      {/* 装飾的な要素 */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-accent/20 rounded-full blur-xl" />
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-primary/20 rounded-full blur-xl" />
-      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-accent/30 rounded-full blur-lg" />
-    </section>
+    </AuroraBackground>
   );
 }

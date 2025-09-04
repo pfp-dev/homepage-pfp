@@ -67,6 +67,9 @@ const config: Config = {
         "slide-in-right": "slideInRight 0.5s ease-out",
         "bounce-gentle": "bounceGentle 2s infinite",
         "pulse-gentle": "pulseGentle 2s infinite",
+        "aurora": "aurora 60s linear infinite",
+        "aurora-right-to-left": "auroraRightToLeft 180s linear infinite",
+        "aurora-left-to-right": "auroraLeftToRight 180s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -96,6 +99,30 @@ const config: Config = {
         pulseGentle: {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.7" },
+        },
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
+        },
+        auroraRightToLeft: {
+          from: {
+            backgroundPosition: "0% 50%, 0% 50%",
+          },
+          to: {
+            backgroundPosition: "300% 50%, 250% 50%",
+          },
+        },
+        auroraLeftToRight: {
+          from: {
+            backgroundPosition: "300% 50%, 250% 50%",
+          },
+          to: {
+            backgroundPosition: "0% 50%, 0% 50%",
+          },
         },
       },
       container: {

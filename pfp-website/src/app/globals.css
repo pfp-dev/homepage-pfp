@@ -24,6 +24,13 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 210 100% 23%;
     --radius: 0.5rem;
+    
+    /* Aurora colors */
+    --aurora-primary: #e0f2fe;
+    --aurora-secondary: #bae6fd;
+    --aurora-accent: #7dd3fc;
+    --aurora-purple: #a5b4fc;
+    --aurora-lavender: #c7d2fe;
   }
 
   .dark {
