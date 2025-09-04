@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd pfp-website && npm run build",
+  "outputDirectory": "pfp-website/.next",
+  "installCommand": "cd pfp-website && npm install",
+  "devCommand": "cd pfp-website && npm run dev",
+  "framework": "nextjs"
+}
