@@ -50,14 +50,14 @@ export const metadata: Metadata = {
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
     ]
   },
-  metadataBase: new URL("https://pfp-company.com"),
+  metadataBase: new URL("https://pfp.co.jp"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "株式会社PFP | システム開発・ITソリューション",
     description: "最新の技術と豊富な経験を活かし、お客様のビジネス成長をサポートするシステム開発パートナーとして、信頼される企業を目指しています。",
-    url: "https://pfp-company.com",
+    url: "https://pfp.co.jp",
     siteName: "株式会社PFP",
     locale: "ja_JP",
     type: "website",
@@ -144,6 +144,26 @@ export default function RootLayout({
     "inLanguage": "ja-JP"
   };
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "株式会社PFP",
+    "image": "https://pfp.co.jp/logo.png",
+    "telephone": "+81-3-5848-2995",
+    "email": "contact@pfp.co.jp",
+    "address": {
+      "@type": "PostalAddress",
+      "postalCode": "154-0023",
+      "addressRegion": "東京都",
+      "addressLocality": "世田谷区",
+      "streetAddress": "若林"
+    },
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "priceRange": "$$",
+    "currenciesAccepted": "JPY",
+    "paymentAccepted": "Cash, Credit Card, Bank Transfer"
+  };
+
   return (
     <html lang="ja" className="scroll-smooth">
       <head>
@@ -157,6 +177,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
           }}
         />
       </head>
