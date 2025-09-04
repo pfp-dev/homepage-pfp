@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -164,7 +166,7 @@ export default function Footer() {
         <div className="py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-gray-400">
-              © 2024 株式会社PFP. All rights reserved.
+              © {currentYear} 株式会社PFP. All rights reserved.
             </div>
             
             <div className="flex items-center gap-6">

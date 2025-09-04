@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, FileText } from "lucide-react";
 
 export default function TokushohoPage() {
+  const currentYear = new Date().getFullYear();
+  
   return (
     <div className="min-h-screen bg-gray-50">
       {/* ヘッダー */}
@@ -293,6 +295,13 @@ export default function TokushohoPage() {
               </CardContent>
             </Card>
           </motion.div>
+        </div>
+
+        {/* フッター */}
+        <div className="mt-16 pt-8 border-t border-gray-200">
+          <div className="text-center text-gray-500">
+            <p>© 2006-{currentYear} PFP, INC.</p>
+          </div>
         </div>
       </div>
     </div>
