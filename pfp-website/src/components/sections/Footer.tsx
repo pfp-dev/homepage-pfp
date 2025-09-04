@@ -38,7 +38,7 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Facebook, href: "https://www.facebook.com/pfp.tokyo", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: Instagram, href: "#", label: "Instagram" }
@@ -135,6 +135,8 @@ export default function Footer() {
                   <a
                     key={index}
                     href={social.href}
+                    target={social.href !== "#" ? "_blank" : undefined}
+                    rel={social.href !== "#" ? "noopener noreferrer" : undefined}
                     className="p-2 bg-gray-800 rounded-lg hover:bg-accent hover:text-gray-900 transition-all duration-200"
                     aria-label={social.label}
                   >
