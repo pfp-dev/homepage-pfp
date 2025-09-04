@@ -54,7 +54,7 @@ export default function Header() {
           >
             <div className="w-8 h-8 flex items-center justify-center">
               <img 
-                src="/logo.png" 
+                src="/logo.webp" 
                 alt="PFP.INC ロゴ" 
                 className="w-full h-full object-contain"
               />

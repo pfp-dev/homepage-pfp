@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import React, { ReactNode } from "react";
+import { motion } from "framer-motion";
 
 interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
   children: ReactNode;
@@ -24,11 +25,10 @@ export const AuroraBackground = ({
       >
         <div className="absolute inset-0 overflow-hidden">
           {/* First layer - moves right to left */}
-          <div
+          <motion.div
             className={cn(
               "absolute -inset-[10px] opacity-25 will-change-transform pointer-events-none",
               "transform-gpu filter blur-[8px]",
-              "animate-aurora-right-to-left",
               showRadialGradient &&
                 "[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,transparent_60%)]"
             )}
@@ -40,14 +40,21 @@ export const AuroraBackground = ({
               backgroundSize: "300% 200%",
               backgroundPosition: "50% 50%",
             }}
-          ></div>
+            animate={{
+              backgroundPosition: ["50% 50%", "100% 0%", "50% 50%"],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          ></motion.div>
           
           {/* Second layer - moves left to right */}
-          <div
+          <motion.div
             className={cn(
               "absolute -inset-[10px] opacity-10 will-change-transform pointer-events-none",
               "transform-gpu filter blur-[12px]",
-              "animate-aurora-left-to-right",
               showRadialGradient &&
                 "[mask-image:radial-gradient(ellipse_at_0%_0%,black_10%,transparent_60%)]"
             )}
@@ -59,7 +66,15 @@ export const AuroraBackground = ({
               backgroundSize: "300% 200%",
               backgroundPosition: "50% 50%",
             }}
-          ></div>
+            animate={{
+              backgroundPosition: ["50% 50%", "0% 100%", "50% 50%"],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          ></motion.div>
         </div>
         {children}
       </div>

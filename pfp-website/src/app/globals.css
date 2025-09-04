@@ -65,12 +65,7 @@
   }
 }
 
-/* カスタムフォント */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono&display=swap');
-
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-}
+/* フォント最適化済み - Next.jsのGoogle Fontsを使用 */
 
 /* スムーススクロール */
 html {
@@ -141,3 +136,43 @@ html {
     transform: translateX(0);
   }
 }
+
+/* Aurora animations - GPU accelerated */
+@keyframes aurora-right-to-left {
+  0% {
+    transform: translateX(0%) translateY(0%) rotate(0deg);
+  }
+  33% {
+    transform: translateX(30%) translateY(-30%) rotate(120deg);
+  }
+  66% {
+    transform: translateX(-20%) translateY(20%) rotate(240deg);
+  }
+  100% {
+    transform: translateX(0%) translateY(0%) rotate(360deg);
+  }
+}
+
+@keyframes aurora-left-to-right {
+  0% {
+    transform: translateX(0%) translateY(0%) rotate(0deg);
+  }
+  33% {
+    transform: translateX(-30%) translateY(30%) rotate(-120deg);
+  }
+  66% {
+    transform: translateX(20%) translateY(-20%) rotate(-240deg);
+  }
+  100% {
+    transform: translateX(0%) translateY(0%) rotate(-360deg);
+  }
+}
+
+.animate-aurora-right-to-left {
+  animation: aurora-right-to-left 20s ease-in-out infinite;
+}
+
+.animate-aurora-left-to-right {
+  animation: aurora-left-to-right 25s ease-in-out infinite;
+}
+

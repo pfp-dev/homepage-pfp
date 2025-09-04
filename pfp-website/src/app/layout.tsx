@@ -8,12 +8,16 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
 });
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
   variable: "--font-noto-sans-jp",
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
 });
 
 export const metadata: Metadata = {
@@ -104,7 +108,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "株式会社PFP",
     "url": "https://pfp.co.jp",
-    "logo": "https://pfp.co.jp/logo.png",
+    "logo": "https://pfp.co.jp/logo.webp",
     "description": "株式会社PFPは、最新の技術と豊富な経験を活かし、システム開発、データベース設計、モバイルアプリ開発、クラウドインフラ構築などの包括的なITソリューションを提供しています。",
     "address": {
       "@type": "PostalAddress",
@@ -150,7 +154,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "株式会社PFP",
-    "image": "https://pfp.co.jp/logo.png",
+    "image": "https://pfp.co.jp/logo.webp",
     "telephone": "+81-3-5848-2995",
     "email": "contact@pfp.co.jp",
     "address": {

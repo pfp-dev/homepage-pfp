@@ -12,33 +12,29 @@ export default function Hero() {
       {/* メインコンテンツ */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 drop-shadow-lg"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          {/* LCP最適化: メインタイトルを即座に表示 */}
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 drop-shadow-lg">
             確かな技術力と
             <br />
             <span className="text-primary">柔軟な対応力</span>で
             <br />
             貴社の課題を解決します
-          </motion.h2>
+          </h2>
 
           <motion.p
             className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto drop-shadow-md"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
             {COMPANY_INFO.getYearsSinceEstablishmentTextWithOver()}の実績を持つSES事業のプロフェッショナル
           </motion.p>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Button
               size="lg"
@@ -67,9 +63,9 @@ export default function Hero() {
           {/* 電話番号のCTA */}
           <motion.div
             className="mt-8 p-4 bg-white/80 backdrop-blur-sm rounded-lg border inline-block"
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
           >
             <div className="flex items-center gap-3 text-primary">
               <Phone className="h-5 w-5" />

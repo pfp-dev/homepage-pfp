@@ -174,8 +174,6 @@ export default function Footer() {
             <div className="flex items-center gap-6">
               <a
                 href="/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="text-sm text-gray-400 hover:text-accent transition-colors duration-200"
               >
                 個人情報保護方針
