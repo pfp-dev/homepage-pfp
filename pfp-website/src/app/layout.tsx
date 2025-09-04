@@ -99,7 +99,7 @@ export default function RootLayout({
       "postalCode": "154-0023",
       "addressRegion": "東京都",
       "addressLocality": "世田谷区",
-      "streetAddress": "若林4-13-2"
+      "streetAddress": "若林"
     },
     "contactPoint": {
       "@type": "ContactPoint",
@@ -113,11 +113,12 @@ export default function RootLayout({
         "closes": "18:00"
       }
     },
-    "email": "contact@pfp.co.jp",
-    "foundingDate": "2006",
     "sameAs": [
-      "https://pfp.co.jp"
-    ]
+      "https://pfp.co.jp",
+      "https://www.facebook.com/pfp.tokyo"
+    ],
+    "email": "contact@pfp.co.jp",
+    "foundingDate": "2006"
   };
 
   const websiteSchema = {
