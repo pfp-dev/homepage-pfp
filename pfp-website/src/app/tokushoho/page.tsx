@@ -95,8 +95,8 @@ export default function TokushohoPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-lg text-gray-700">
-                  〒154-0023<br />
-                  東京都世田谷区若林4-13-2
+                  〒150-0041<br />
+                  東京都渋谷区神南1丁目11-4 FPGリンクス神南 5階
                 </p>
               </CardContent>
             </Card>

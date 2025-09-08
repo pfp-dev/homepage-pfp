@@ -112,10 +112,10 @@ export default function RootLayout({
     "description": "株式会社PFPは、最新の技術と豊富な経験を活かし、システム開発、データベース設計、モバイルアプリ開発、クラウドインフラ構築などの包括的なITソリューションを提供しています。",
     "address": {
       "@type": "PostalAddress",
-      "postalCode": "154-0023",
+      "postalCode": "150-0041",
       "addressRegion": "東京都",
-      "addressLocality": "世田谷区",
-      "streetAddress": "若林"
+      "addressLocality": "渋谷区",
+      "streetAddress": "神南1丁目11-4 FPGリンクス神南 5階"
     },
     "contactPoint": {
       "@type": "ContactPoint",
@@ -159,10 +159,10 @@ export default function RootLayout({
     "email": "contact@pfp.co.jp",
     "address": {
       "@type": "PostalAddress",
-      "postalCode": "154-0023",
+      "postalCode": "150-0041",
       "addressRegion": "東京都",
-      "addressLocality": "世田谷区",
-      "streetAddress": "若林"
+      "addressLocality": "渋谷区",
+      "streetAddress": "神南1丁目11-4 FPGリンクス神南 5階"
     },
     "openingHours": "Mo-Fr 09:00-18:00",
     "priceRange": "$$",

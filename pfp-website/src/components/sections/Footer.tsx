@@ -76,8 +76,8 @@ export default function Footer() {
                 <div className="flex items-start gap-3">
                   <MapPin className="h-4 w-4 text-primary mt-0.5" />
                   <span className="text-sm text-gray-300">
-                    〒154-0023<br />
-                    東京都世田谷区若林
+                    〒150-0041<br />
+                    東京都渋谷区神南1丁目11-4 FPGリンクス神南 5階
                   </span>
                 </div>
               </div>

@@ -76,8 +76,8 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "所在地",
-      content: "〒154-0023",
-      subContent: "東京都世田谷区若林",
+      content: "〒150-0041",
+      subContent: "東京都渋谷区神南1丁目11-4 FPGリンクス神南 5階",
       link: "https://maps.google.com"
     },
     {

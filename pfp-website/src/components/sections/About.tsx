@@ -150,8 +150,8 @@ export default function About() {
                 <div>
                   <span className="text-gray-600 font-medium block mb-1">所在地</span>
                   <span className="text-gray-900">
-                    〒154-0023<br />
-                    東京都世田谷区若林
+                    〒150-0041<br />
+                    東京都渋谷区神南1丁目11-4 FPGリンクス神南 5階
                   </span>
                 </div>
                 <div className="flex">
