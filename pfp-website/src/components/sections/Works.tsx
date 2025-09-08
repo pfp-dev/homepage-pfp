@@ -99,9 +99,9 @@ export default function Works() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 group">
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between mb-2">
-                    <CardTitle className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">
-                      {work.title}
-                    </CardTitle>
+                  <CardTitle className="text-lg font-bold text-primary group-hover:text-primary/80 transition-colors">
+                    {work.title}
+                  </CardTitle>
                     <ExternalLink className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
                   </div>
                   <div className="space-y-2 text-sm text-gray-600">

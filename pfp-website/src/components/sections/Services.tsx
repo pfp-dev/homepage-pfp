@@ -109,7 +109,7 @@ export default function Services() {
                     {service.features.map((feature, featureIndex) => (
                       <span
                         key={featureIndex}
-                        className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
+                        className="px-3 py-1 bg-primary/20 text-primary text-sm rounded-full"
                       >
                         {feature}
                       </span>

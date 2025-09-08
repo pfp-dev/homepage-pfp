@@ -86,7 +86,7 @@ export default function About() {
                   <div className="mb-4">
                     <stat.icon className="h-12 w-12 mx-auto text-primary" />
                   </div>
-                  <div className="text-3xl font-bold text-gray-900 mb-2">
+                  <div className="text-3xl font-bold text-primary mb-2">
                     {stat.number}
                   </div>
                   <div className="text-lg font-semibold text-gray-700 mb-1">

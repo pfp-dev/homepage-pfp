@@ -50,7 +50,7 @@ export default function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="px-8 py-3 text-lg group"
+              className="px-8 py-3 text-lg group border-primary text-primary hover:bg-primary hover:text-white"
               asChild
             >
               <a href="#services" className="flex items-center gap-2">

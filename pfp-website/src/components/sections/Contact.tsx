@@ -289,9 +289,9 @@ export default function Contact() {
                 <Card className="hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="p-3 bg-primary/10 rounded-lg">
-                        <info.icon className="h-6 w-6 text-primary" />
-                      </div>
+                  <div className="p-3 bg-primary/20 rounded-lg">
+                    <info.icon className="h-6 w-6 text-primary" />
+                  </div>
                       <div className="flex-1">
                         <h3 className="font-semibold text-gray-900 mb-2">
                           {info.title}

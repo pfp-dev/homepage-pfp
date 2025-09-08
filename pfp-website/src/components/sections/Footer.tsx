@@ -66,15 +66,15 @@ export default function Footer() {
               {/* 連絡先情報 */}
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Phone className="h-4 w-4 text-accent" />
+                  <Phone className="h-4 w-4 text-primary" />
                   <span className="text-sm text-gray-300">03-5848-2995</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail className="h-4 w-4 text-accent" />
+                  <Mail className="h-4 w-4 text-primary" />
                   <span className="text-sm text-gray-300">contact@pfp.co.jp</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin className="h-4 w-4 text-accent mt-0.5" />
+                  <MapPin className="h-4 w-4 text-primary mt-0.5" />
                   <span className="text-sm text-gray-300">
                     〒154-0023<br />
                     東京都世田谷区若林
@@ -96,7 +96,7 @@ export default function Footer() {
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-accent transition-colors duration-200 text-sm"
+                      className="text-gray-300 hover:text-primary transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </a>
@@ -137,7 +137,7 @@ export default function Footer() {
                     href={social.href}
                     target={social.href !== "#" ? "_blank" : undefined}
                     rel={social.href !== "#" ? "noopener noreferrer" : undefined}
-                    className="p-2 bg-gray-800 rounded-lg hover:bg-accent hover:text-gray-900 transition-all duration-200"
+                    className="p-2 bg-gray-800 rounded-lg hover:bg-primary hover:text-white transition-all duration-200"
                     aria-label={social.label}
                   >
                     <social.icon className="h-5 w-5" />
@@ -150,7 +150,7 @@ export default function Footer() {
                 <Button
                   asChild
                   variant="outline"
-                  className="w-full border-accent text-accent hover:bg-accent hover:text-gray-900"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-white"
                 >
                   <a href="#contact">
                     お問い合わせ
@@ -192,7 +192,7 @@ export default function Footer() {
       {/* トップに戻るボタン */}
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 p-3 bg-accent text-gray-900 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 z-50"
+                className="fixed bottom-8 right-8 p-3 bg-primary text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 z-50"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         whileHover={{ scale: 1.1 }}
