@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 import ApplyForm from "./ApplyForm";
 
 // 伊東オフィス求人ポスター（QRコード）からの着地ページ
-// 【要確認】と書かれた箇所は CEO 確認待ちの未確定項目。値を推測で埋めないこと。
+// 暫定版（2026-10-02 CEO GO）：確定済みの条件のみ掲載。未確定の労働条件は「面談時にご案内」とし、値を推測で書かないこと。
 
 const PAGE_TITLE = "Javaエンジニア採用（伊豆・リモート）｜株式会社PFP";
 const PAGE_DESCRIPTION =
@@ -48,14 +48,6 @@ export const metadata: Metadata = {
   },
 };
 
-function Todo({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-block rounded bg-yellow-100 px-1.5 py-0.5 text-sm font-medium text-yellow-900 ring-1 ring-yellow-300">
-      【要確認：{children}】
-    </span>
-  );
-}
-
 const highlights = [
   { icon: Home, label: "基本リモート（在宅）" },
   { icon: JapaneseYen, label: "年収460万円〜" },
@@ -69,17 +61,9 @@ const conditions: Row[] = [
   { label: "職種", value: "Javaエンジニア" },
   {
     label: "業務内容",
-    value: (
-      <>
-        東京の案件を担当していただきます。
-        <br />
-        <Todo>業務内容の具体例・使用技術</Todo>
-      </>
-    ),
+    value: "東京の案件を担当していただきます（Javaを用いたシステム開発）。",
   },
   { label: "雇用形態", value: "正社員" },
-  { label: "契約期間", value: <Todo>契約期間（期間の定めなしを想定）</Todo> },
-  { label: "試用期間", value: <Todo>試用期間の有無・期間・期間中の条件</Todo> },
   { label: "年収", value: "460万円〜（経験・スキルにより決定）" },
   { label: "応募条件", value: "Java実務経験2年以上" },
   {
@@ -89,24 +73,21 @@ const conditions: Row[] = [
         基本リモート（在宅）。伊東オフィスへの出社も選択できます。
         <br />
         熱海・伊東・伊豆の各地からの応募を歓迎します。
-        <br />
-        伊東オフィス所在地：<Todo>伊東オフィス住所</Todo>
       </>
     ),
   },
-  { label: "就業場所の変更の範囲", value: <Todo>就業場所の変更の範囲</Todo> },
   {
     label: "出張",
     value: "東京出張 月2回程度あり（交通費・宿泊費は会社負担）",
   },
-  { label: "就業時間", value: <Todo>始業・終業時刻、休憩、時間外労働の有無</Todo> },
-  { label: "休日・休暇", value: <Todo>休日休暇</Todo> },
-  { label: "社会保険", value: <Todo>加入保険（健康保険・厚生年金・雇用保険・労災保険）</Todo> },
-  { label: "福利厚生", value: <Todo>福利厚生</Todo> },
-  { label: "受動喫煙対策", value: <Todo>受動喫煙防止措置</Todo> },
   {
     label: "働き方への配慮",
     value: "介護・通院など、ご家族の事情に柔軟に対応します。",
+  },
+  {
+    label: "その他の条件",
+    value:
+      "契約期間・試用期間・就業時間・休日休暇・社会保険・福利厚生などの詳細は、面談の際にご案内します。",
   },
 ];
 
@@ -244,7 +225,9 @@ export default function ItoRecruitPage() {
             選考フロー
           </h2>
           <div className="mx-auto max-w-3xl text-center">
-            <Todo>選考フロー（書類選考・面接回数・面接方法など）</Todo>
+            <p className="leading-relaxed text-gray-700">
+              下記フォームからご応募ください。応募内容を確認のうえ、担当者より面談についてご連絡します。
+            </p>
           </div>
         </section>
 
