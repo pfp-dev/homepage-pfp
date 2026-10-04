@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -196,6 +197,17 @@ export default function RootLayout({
         {children}
         <SpeedInsights />
         <Analytics />
+        {/* Google Analytics 4（プロパティ: PFP.CO.JP） */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-79LB1W4JKM"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-79LB1W4JKM');`}
+        </Script>
       </body>
     </html>
   );

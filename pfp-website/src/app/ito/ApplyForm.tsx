@@ -30,6 +30,10 @@ export default function ApplyForm() {
       if (response.ok && result?.success !== false) {
         setIsSubmitted(true);
         form.reset();
+        // GA4：採用応募の完了を計測（layout.tsx の gtag が読み込まれている場合のみ）
+        (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag?.("event", "generate_lead", {
+          form_name: "ito_recruit",
+        });
       } else {
         console.error("送信エラー:", response.statusText, result);
         alert("送信に失敗しました。お手数ですが時間をおいて再度お試しください。");
